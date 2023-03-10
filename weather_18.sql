@@ -7,11 +7,13 @@
 -- Query the Manhattan Distance between points  and  and round it to a scale of  decimal places.
 
 SELECT
+    --testing piece by piece
     MIN(LAT_N) AS x1,
     MIN(LONG_W) AS y1,
     MAX(LAT_N) AS x2,
     MAX(LONG_W) AS y2,
     ABS(MIN(LAT_N) - MAX(LAT_N)) AS xdiff,
     ABS(MIN(LONG_W) - MAX(LONG_W)) AS ydiff,
+    --solution
     ROUND(ABS(MIN(LAT_N) - MAX(LAT_N)) + ABS(MIN(LONG_W) - MAX(LONG_W)),4) AS manhattan
 FROM station;
